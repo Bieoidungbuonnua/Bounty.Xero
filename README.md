@@ -93,7 +93,7 @@ getgenv().Configs = {
         }
     },
     ["Theme"] = {
-        ["Enable"] = true,
+        ["Enable"] = false,
         ["Name"] = "Hutao", -- Hutao, Raiden, Ayaka, Yelan
         ["Custom Theme"] = {
             ["Enable"] = false,
