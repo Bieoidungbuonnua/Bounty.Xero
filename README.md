@@ -1,110 +1,93 @@
-getgenv().Configs = {
-    ["Team"] = "Pirates", -- Pirates/Marines
-    ["Auto Ken"] = true,
-    ["Auto Buso"] = true,
-    ["Auto turn on race v3"] = true,
-    ["Auto turn on race v4"] = true,
-    ["FPS Boost"] = false,
-    ["Click Time"] = 0.2,
-    ["Bypass TP"] = true,
-    ["Chat"] = {
-        ["Enable"] = false,
-        ["Message"] = {"get good losers", "no skill?", "dont cry xd", "u cant win lol", "try to hunt me", "get a good gaming chair losers", "feeling no skill?"}, -- Input your message here
+getgenv().Setting = {
+    ["Team"] = "Pirates", --[[Marines]]
+    ["Webhook"] = {
+        ["Url"] = "", --[[ link webhook]]
+        ["Enabled"] = true, --[[ enable webhook]]
     },
-    ["Run When Low Health"] = {
-        ["Enable"] = true,
-        ["Health"] = 3500,
-        ["Come back"] = false
+    ["BypassTP"] = {
+        ["Enable"] = true, --[[ bypass tp ]]
+        ["Attempt"] = 0, --[[ Tween If Failed After x Attempts (change to 0 for inf bypass tp even it fail)]]
     },
-    ["Region"] = "Singapore", -- Singapore, United States, Germany, France, India, ??? ...
-    ["Weapons"] = {
+    ["FpsLock"] = {
+        ["Enable"] = true, --[[ lock fps]]
+        ["Cap"] = 30, --[[ fps to lock]]
+    },
+    ["LockBounty"] = {
+        ["Enable"] = true, --[[ lock bounty]]
+        ["Cap"] = 30000000, --[[ reach to this bounty do the action below]]
+        ["Action"] = "Kick", --[[ Kick, Shutdown]]
+        ["SendMessage"] = true, --[[ send message to webhook when reach the cap]]
+        ["Message"] = "Congratulation You Have Reached The Bounty Cap MyBounty" --[[ It Will Replace MyBounty With Your Current Bounty, Add Ping Everyone If You Want]]
+    },
+    ["Click"] = {
+        ["Enable"] = true, --[[ click ]]
+        ["FastClick"] = true --[[ fast click]]
+    },
+    ["Haki Ken"] = {
+        ["Enable"] = true, --[[ Ken Haki ]]
+    },
+    ["SpamSkill"] = true, --[[ Will use all skills as fast as possbile ignore holding skills]]
+    ["Weapons"] = { --[[ Select Weapon, Self Explain]]
         ["Melee"] = {
-            ["Enable"] = true,
-            ["Delay"] = 1.75,
+            ["Enable"] = true, --[[ enable using melee]]
+            ["Delay"] = 0,   --[[ time delay between the melee skill]] 
             ["Skills"] = {
                 ["Z"] = {
-                    ["Enable"] = true,
-                    ["HoldTime"] = 1,
+                    ["Enable"] = true, --[[ enable using skill Z]]
+                    ["HoldTime"] = 1,  --[[ hold skill in (seconds)]]
                 },
                 ["X"] = {
-                    ["Enable"] = true,
-                    ["HoldTime"] = 0,
-                },
-                ["C"] = {
-                    ["Enable"] = true,
-                    ["HoldTime"] = 0,
-                }
-            }
-        },
-        ["Fruit"] = {
-            ["Enable"] = false,
-            ["Delay"] = 1.8,
-            ["Skills"] = {
-                ["Z"] = {
-                    ["Enable"] = true,
-                    ["HoldTime"] = 0,
-                },
-                ["X"] = {
-                    ["Enable"] = true,
-                    ["HoldTime"] = 0,
+                    ["Enable"] = true, --[[ enable using skill X ]]
+                    ["HoldTime"] = 1,  --[[ hold skill in (seconds)]]
                 },
 
                 ["C"] = {
-                    ["Enable"] = false,
-                    ["HoldTime"] = 0,
+                    ["Enable"] = true, --[[ enable using skill C]]
+                    ["HoldTime"] = 1,  --[[ hold skill in (seconds)]]
+                },
+            },
+        },
+        ["Blox Fruit"] = {
+            ["Enable"] = false, --[[ enable using blox fruit]]
+            ["Delay"] = 0,  --[[ time delay between the blox fruit skill ]]
+            ["Skills"] = {
+                ["Z"] = {
+                    ["Enable"] = true, --[[ enable using skill Z]]
+                    ["HoldTime"] = 0, --[[ hold skill in (seconds)]]
+                },
+                ["X"] = {
+                    ["Enable"] = true, --[[ enable using skill X]]
+                    ["HoldTime"] = 0, --[[ hold skill in (seconds)]]
+                },
+
+                ["C"] = {
+                    ["Enable"] = true, --[[ enable using skill C]]
+                    ["HoldTime"] = 1, --[[ hold skill in (seconds)]]
                 },
                 ["V"] = {
-                    ["Enable"] = false,
-                    ["HoldTime"] = 0,
+                    ["Enable"] = true, --[[ enable using skill V]]
+                    ["HoldTime"] = 3, --[[ hold skill in (seconds)]]
                 },
                 ["F"] = {
-                    ["Enable"] = false,
-                    ["HoldTime"] = 0,
-                }
-            }
+                    ["Enable"] = false, --[[ enable using skill F]]
+                    ["HoldTime"] = 0, --[[ hold skill in (seconds)]]
+                },
+            },
         },
         ["Sword"] = {
-            ["Enable"] = true,
-            ["Delay"] = 1,
+            ["Enable"] = true, --[[ enable using sword]]
+            ["Delay"] = 0, --[[ time delay between the sword skill ]]
             ["Skills"] = {
                 ["Z"] = {
-                    ["Enable"] = true,
-                    ["HoldTime"] = 0.2,
+                    ["Enable"] = true, --[[ enable using skill Z]]
+                    ["HoldTime"] = 1, --[[ hold skill in (seconds)]]
                 },
                 ["X"] = {
-                    ["Enable"] = true,
-                    ["HoldTime"] = 0.5,
-                }
-            }
+                    ["Enable"] = true, --[[[[enable using skill X]]
+                    ["HoldTime"] = 0, --[[ hold skill in (seconds)]]
+                },
+            },
         },
-        ["Gun"] = {
-            ["Enable"] = false,
-            ["Delay"] = 0.5,
-            ["Skills"] = {
-                ["Z"] = {
-                    ["Enable"] = true,
-                    ["HoldTime"] = 0,
-                },
-                ["X"] = {
-                    ["Enable"] = true,
-                    ["HoldTime"] = 0,
-                }
-            }
-        }
-    },
-    ["Theme"] = {
-        ["Enable"] = false,
-        ["Name"] = "Hutao", -- Hutao, Raiden, Ayaka, Yelan
-        ["Custom Theme"] = {
-            ["Enable"] = false,
-            ["Text Color"] = Color3.fromRGB(231, 85, 88),
-            ["Character Position"] = UDim2.new(0.563000023, 0, -0.174999997, 0)
-        }
-    },
-    ["Webhook"] = {
-        ["Enable"] = true,
-        ["Url"] = "",
-        ["Image"] = ""
     }
 }
-loadstring(game:HttpGet("https://xerohub.click/script/autobounty.lua"))() 
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/Xero2409/XeroHub/main/bounty.lua")))()
